@@ -46,6 +46,10 @@ foreach ($person in $people_to_search_list) {
         # building the output, the pscustomobject cast is needed
         # because it's what export-csv expects
         $output_csv_data += [PSCustomObject]@{
+            first_name     = $person.first
+            last_name      = $person.last
+            age            = $person.age
+            date_of_birth  = $person.date_of_birth
             name           = $booking_lookup_data.fullName
             booking_date   = $booking_lookup_data.bookingDate
             booking_number = $booking_lookup_data.bookingNumber
